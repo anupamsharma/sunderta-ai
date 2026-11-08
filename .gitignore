@@ -1,0 +1,60 @@
+# OS / editor
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Python
+.venv/
+venv/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# App data / outputs
+data/uploads/
+uploads/
+skin_analysis_output/
+results/
+*.tmp
+*.log
+
+# Frontend
+ui-code/node_modules/
+ui-code/dist/
+ui-code/.vite/
+ui-code/.figma/make/deploy/
+ui-code/.figma/make/deploy-preview/
+
+# Docker / local volumes
+mongo_data/
+media_data/
+
+# Misc
+.cursor/
+*.bak

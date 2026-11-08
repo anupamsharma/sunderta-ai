@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --color-ivory: #FFFDF9;
+  --color-blush: #F8E4E3;
+  --color-gold: #D9B85F;
+  --color-gold-dark: #B8962E;
+  --color-peach: #F4C6B8;
+  --color-charcoal: #171717;
+  --color-muted-brown: #706761;
+  --color-sage: #EAF4E7;
+  --color-amber: #E9B44C;
+}
+
+:root {
+  --background: #FFFDF9;
+  --foreground: #171717;
+  --card: #FFFFFF;
+  --card-foreground: #171717;
+  --primary: #D9B85F;
+  --primary-foreground: #171717;
+  --secondary: #F8E4E3;
+  --secondary-foreground: #706761;
+  --muted: #F5F0EB;
+  --muted-foreground: #9B8E85;
+  --accent: #F4C6B8;
+  --accent-foreground: #171717;
+  --border: #EDE8E2;
+  --ring: #D9B85F;
+  --gold: #D9B85F;
+  --gold-dark: #B8962E;
+  --radius: 20px;
+}
+
+* {
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #D9B85F 0%, #E9C76A 50%, #B8962E 100%);
+}
+
+.blush-gradient {
+  background: linear-gradient(135deg, #F8E4E3 0%, #F4C6B8 100%);
+}
+
+.hero-gradient {
+  background: linear-gradient(145deg, #FFFDF9 0%, #FDF5F0 40%, #F8E4E3 100%);
+}
+
+.scan-ring {
+  animation: scanRing 2s ease-in-out infinite;
+}
+
+@keyframes scanRing {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+.scan-line {
+  animation: scanLine 2.5s ease-in-out infinite;
+}
+
+@keyframes scanLine {
+  0% { top: 10%; }
+  100% { top: 90%; }
+}
+
+.typing-dot {
+  animation: typingBounce 1.2s ease-in-out infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+}
+
+.step-check {
+  animation: checkIn 0.4s ease-out forwards;
+}
+
+@keyframes checkIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.gold-glow {
+  box-shadow: 0 0 20px rgba(217, 184, 95, 0.4);
+}
+
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}

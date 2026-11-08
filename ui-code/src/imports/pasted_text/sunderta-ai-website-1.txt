@@ -1,0 +1,659 @@
+Create a complete, polished, responsive React.js website for an AI-powered skincare and beauty platform called “Sunderta AI”.
+
+The website should feel premium, elegant, trustworthy, modern, and feminine without looking childish. Use a soft luxury beauty aesthetic inspired by premium skincare brands.
+
+IMPORTANT:
+- Build a functional React.js website, not only static mockups.
+- The final project must be downloadable and runnable as clean React code.
+- Use reusable components and realistic interactions.
+- Use placeholder/mock AI results where an actual AI backend is not available.
+- Do not create only mobile screens. Create a complete responsive web application for desktop, tablet, and mobile.
+- Preserve the core flow shown in the reference images:
+  Welcome → Skin Capture → Analysis → Skin Report → AI Beauty Chat.
+
+TECHNICAL REQUIREMENTS
+
+Use:
+- React.js
+- Vite
+- TypeScript if supported
+- Tailwind CSS
+- React Router
+- Lucide React icons
+- Recharts for progress and skin trend charts
+- Browser camera APIs where possible
+- Local mock data for reports, products, routines, and chat
+- localStorage for saving scan history and onboarding state
+
+Do not use:
+- Next.js
+- Backend-only functionality
+- Complicated dependencies
+- Unsupported proprietary components
+- Hardcoded layouts that break on different screen sizes
+
+BRAND
+
+Brand name: Sunderta AI
+
+Tagline:
+“Your personal AI beauty companion”
+
+Alternative marketing headline:
+“Understand your skin. Improve it with confidence.”
+
+Brand personality:
+- Premium
+- Intelligent
+- Warm
+- Personal
+- Scientific but approachable
+- Beauty-focused
+- Trustworthy
+
+VISUAL DESIGN
+
+Use a luxury skincare design system.
+
+Primary palette:
+- Warm ivory: #FFFDF9
+- Soft blush pink: #F8E4E3
+- Champagne gold: #D9B85F
+- Soft peach: #F4C6B8
+- Charcoal: #171717
+- Muted brown-grey: #706761
+- Pale sage green: #EAF4E7
+- Warning amber: #E9B44C
+
+Use subtle gradients such as:
+- blush pink to champagne gold
+- warm ivory to pale peach
+
+Typography:
+- Elegant serif font for major headings, similar to Playfair Display or Cormorant Garamond
+- Clean sans-serif font such as Inter for body text and controls
+
+Design characteristics:
+- Generous whitespace
+- Rounded cards, around 20–28px radius
+- Soft shadows
+- Thin borders
+- Premium product photography placeholders
+- Elegant circular progress indicators
+- Small gold highlights
+- Smooth but restrained animation
+- Accessible text contrast
+- Clear focus and hover states
+
+Avoid:
+- Excessive glassmorphism
+- Neon colours
+- Overly dark pages except during camera capture and analysis
+- Generic SaaS dashboard appearance
+- Dense technical layouts
+- Unrealistic medical claims
+
+GLOBAL WEBSITE STRUCTURE
+
+Create the following routes:
+
+1. /
+2. /analysis
+3. /analysis/processing
+4. /report
+5. /assistant
+6. /history
+7. /routine
+8. /products
+9. /profile
+10. /privacy
+11. /terms
+
+Add a responsive navigation system.
+
+Desktop navigation:
+- Logo
+- Skin Analysis
+- My Report
+- Routine
+- Products
+- AI Assistant
+- Scan History
+- Profile
+- “Analyze My Skin” primary CTA
+
+Mobile navigation:
+- Bottom navigation with Home, Report, Analyze, Assistant, Profile
+- The Analyze item should be visually prominent
+
+PAGE 1: LANDING PAGE
+
+Create a premium marketing landing page.
+
+Header:
+- Sunderta AI logo
+- Navigation links
+- Sign In
+- Analyze My Skin button
+
+Hero section:
+- Split desktop layout
+- Left side contains:
+  - Eyebrow: “AI-powered skin intelligence”
+  - Heading: “Understand your skin. Improve it with confidence.”
+  - Supporting copy explaining that users can scan their face, receive a personalized skin report, build a routine, and talk to an AI beauty assistant
+  - Primary CTA: “Start Free Skin Analysis”
+  - Secondary CTA: “See How It Works”
+  - Trust line: “Private, secure and designed for everyday skincare guidance”
+- Right side contains:
+  - Premium portrait placeholder of a person with healthy natural skin
+  - Soft circular scanning overlay
+  - Floating mini cards showing:
+    - Skin score: 82
+    - Hydration: Good
+    - Skin type: Combination
+    - Routine ready
+
+Add a “How It Works” section with four steps:
+1. Capture your face
+2. AI analyzes visible skin features
+3. Receive your report and routine
+4. Track progress and chat with Beauty AI
+
+Add a features section:
+- AI Skin Analysis
+- Personalized Routine
+- Product Recommendations
+- Progress Tracking
+- Beauty AI Chat
+- Salon and Expert Recommendations
+
+Add a “Your skin report at a glance” preview section based on the reference report screen.
+
+Show:
+- Skin health score
+- Skin type
+- Main concerns
+- Skin strengths
+- Morning routine
+- Night routine
+- Product recommendations
+
+Add a privacy and trust section:
+- Your images remain private
+- User controls scan history
+- Results are cosmetic guidance, not a medical diagnosis
+- Consult a dermatologist for medical concerns
+
+Add testimonials using realistic placeholder content.
+
+Add final CTA:
+“Your skin changes. Your routine should too.”
+
+Add footer with:
+- Product
+- Company
+- Legal
+- Contact
+- Privacy
+- Terms
+- Disclaimer
+
+PAGE 2: SKIN ANALYSIS CAPTURE
+
+Create a browser-based camera analysis experience.
+
+Use a dark charcoal background to focus attention on the face.
+
+Desktop:
+- Left panel for instructions
+- Centre camera preview
+- Right panel for quality indicators
+
+Mobile:
+- Full-screen camera experience similar to the reference image
+
+Camera preview:
+- Large portrait-oriented area
+- Oval face guide
+- Subtle gold outline
+- Horizontal eye-alignment guide
+- Optional face-grid overlay
+- Button to enable camera
+- Upload Image fallback
+
+Quality indicators:
+- Lighting
+- Face position
+- Sharpness
+- Face visibility
+- Distance
+
+Each indicator should have:
+- Pending state
+- Warning state
+- Success state
+
+Instructions:
+- Look straight at the camera
+- Remove glasses if possible
+- Keep hair away from your face
+- Use natural or evenly distributed light
+- Avoid makeup for the most useful analysis
+- Keep your full face inside the guide
+
+Actions:
+- Take Photo
+- Record 5-Second Video
+- Upload Existing Photo
+- Retake
+- Continue to Analysis
+
+Include consent checkbox:
+“I understand this scan provides cosmetic skincare guidance and is not a medical diagnosis.”
+
+Build functional camera behaviour using getUserMedia where supported. Where unavailable, display an elegant upload fallback.
+
+PAGE 3: ANALYSIS PROCESSING
+
+Create a premium full-screen processing experience with a dark background.
+
+Show:
+- Circular cropped face preview
+- Animated scanning line
+- Heading: “Analyzing your skin…”
+- Estimated remaining time
+- Multi-step progress list
+
+Steps:
+1. Checking image quality
+2. Detecting visible facial regions
+3. Estimating skin type
+4. Reviewing hydration appearance
+5. Checking visible acne and redness
+6. Reviewing pigmentation and dark circles
+7. Reviewing fine lines and texture
+8. Preparing personalized recommendations
+
+Use animated checkmarks for completed steps and a gold loading glow for the active step.
+
+Add reassuring privacy message:
+“Your scan is being processed securely.”
+
+After simulated completion, automatically navigate to /report.
+
+PAGE 4: SKIN REPORT DASHBOARD
+
+This is the core application page.
+
+Desktop layout:
+- Left navigation sidebar
+- Main report content
+- Optional right-side assistant panel
+
+Mobile layout:
+- Single-column cards
+- Sticky action buttons
+- Bottom navigation
+
+Top section:
+- Greeting: “Hello, Vivisha 👋”
+- Today’s Beauty Report
+- Scan date
+- Compare with previous scan
+- Download or share report button
+
+Skin score:
+- Large circular score indicator
+- Example score: 82
+- Label: “Skin Health Score”
+- Status: “Healthy, with a few areas to improve”
+- Show change from last scan, such as +3
+
+Add score categories:
+- Hydration
+- Texture
+- Tone evenness
+- Clarity
+- Fine lines
+- Dark circles
+
+Each category should show:
+- Score
+- Status
+- Small explanation
+- Confidence label such as High, Medium, or Limited
+
+Skin type:
+- Combination
+- Include a short explanation of what combination skin means
+
+Issues section:
+- Mild acne
+- Dry zones
+- Dark circles
+- Uneven pigmentation
+
+Strengths section:
+- Good hydration
+- Fine texture
+- Even skin tone
+- Low visible redness
+
+For each issue or strength, open a detail modal or expandable panel with:
+- What the AI observed
+- What it may mean cosmetically
+- Recommended next step
+- Important disclaimer where appropriate
+
+Face analysis map:
+- Show a face image placeholder with subtle non-medical highlight regions
+- Toggle between:
+  - Acne
+  - Pigmentation
+  - Dryness
+  - Dark circles
+  - Fine lines
+- Clearly label the visual as an estimated cosmetic analysis
+
+Today’s routine:
+Morning:
+- Gentle cleanser
+- Vitamin C serum
+- Lightweight moisturizer
+- SPF 50 sunscreen
+
+Night:
+- Double cleanse
+- Niacinamide serum
+- Moisturizer
+- Optional targeted treatment
+
+Each step should contain:
+- Product category
+- Why it is recommended
+- Order of use
+- Mark as completed checkbox
+- View alternatives
+
+Recommended products:
+Create attractive product cards containing:
+- Image placeholder
+- Product name
+- Product category
+- Price placeholder
+- Suitability tags
+- Reason for recommendation
+- View Details
+- Add to Routine
+
+Include filters:
+- Budget
+- Skin concern
+- Ingredient preference
+- Fragrance-free
+- Vegan
+- Sensitive skin
+
+Salon recommendation:
+- Treatment name
+- Why it may help
+- Recommended timeframe
+- Book Appointment CTA
+- Explain that salon treatments are optional
+
+Expert escalation:
+Add a careful alert:
+“If you have persistent irritation, painful acne, sudden changes, or another medical concern, consult a qualified dermatologist.”
+
+PAGE 5: AI BEAUTY ASSISTANT
+
+Create a polished conversational interface called “Beauty AI”.
+
+Header:
+- Beauty AI avatar
+- Online indicator
+- Information icon
+- Start New Conversation
+
+Initial AI message:
+“Hi Vivisha! I reviewed your latest skin report. I noticed mild acne and slightly dry areas. I can explain your results, help you build a routine, compare ingredients, or suggest suitable product categories.”
+
+Suggested prompts:
+- Why is my score 82?
+- Create my morning routine
+- Recommend products under ₹2,000
+- How can I reduce acne?
+- Can I use retinol with niacinamide?
+- Compare my latest scan
+- Explain my dark circles
+- Make my routine simpler
+
+Chat functionality:
+- Working message input
+- Simulated AI replies
+- Typing state
+- Message timestamps
+- Suggested follow-up chips
+- Product recommendation cards inside chat
+- Routine cards inside chat
+- Ability to reference report categories
+
+Add guardrails:
+- Beauty AI must not diagnose medical conditions
+- For severe or persistent symptoms, recommend professional consultation
+- Avoid guaranteed results
+- Explain uncertainty when evidence is limited
+
+Desktop:
+- Chat area plus contextual report sidebar
+
+Mobile:
+- Full-screen chat similar to the reference image
+
+PAGE 6: SCAN HISTORY AND PROGRESS
+
+Create a history page that shows:
+- Previous scan cards
+- Dates
+- Overall score
+- Skin type
+- Main concerns
+- Improvements
+- View Report
+- Compare
+
+Create trend charts for:
+- Overall score
+- Hydration
+- Acne appearance
+- Pigmentation
+- Texture
+- Dark circles
+
+Add comparison view:
+- Previous image vs current image
+- Slider interaction if possible
+- Score changes
+- Improvement summary
+- Areas needing attention
+- Routine adherence correlation
+
+Use mock scans stored in localStorage.
+
+PAGE 7: PERSONALIZED ROUTINE
+
+Create a complete routine planner.
+
+Sections:
+- Morning routine
+- Night routine
+- Weekly treatments
+
+Each routine item should have:
+- Step number
+- Product type
+- Suggested ingredient
+- Usage instructions
+- Frequency
+- Why it was chosen
+- Mark completed
+- Replace product
+- Remove item
+
+Add:
+- Daily completion tracker
+- Weekly consistency percentage
+- Streak indicator
+- Reminder settings UI
+- “Simplify My Routine” action
+- “Adjust for My Budget” action
+- “Ask Beauty AI” action
+
+PAGE 8: PRODUCTS
+
+Create a curated product recommendation marketplace interface without requiring real checkout.
+
+Product cards should display:
+- Product image placeholder
+- Brand
+- Product name
+- Category
+- Price
+- Rating placeholder
+- Recommended for
+- Key ingredients
+- Why it matches the user’s report
+- Add to Routine
+- View Details
+
+Filters:
+- Concern
+- Skin type
+- Category
+- Price range
+- Ingredient
+- Fragrance-free
+- Cruelty-free
+- Availability
+
+Product details modal or page:
+- Product overview
+- Suitable for
+- Key ingredients
+- How to use
+- Compatibility warnings
+- Alternatives
+- AI explanation
+
+PAGE 9: PROFILE AND SETTINGS
+
+Include:
+- Name
+- Profile photo
+- Age range, optional
+- Skin goals
+- Skin sensitivities
+- Allergies or ingredients to avoid
+- Budget range
+- Preferred product types
+- Location for salon recommendations
+- Notification preferences
+- Privacy settings
+- Delete scans
+- Download data
+- Sign out
+
+Do not require users to enter medical information.
+
+RESPONSIVE REQUIREMENTS
+
+Desktop:
+- Maximum content width around 1440px
+- Use grid layouts with clear hierarchy
+- Keep report content easy to scan
+
+Tablet:
+- Collapse side navigation
+- Use two-column cards where possible
+
+Mobile:
+- Match the elegant compact feel of the supplied mobile references
+- Use full-width cards
+- Large touch targets
+- Sticky bottom navigation
+- Avoid tiny text
+- Maintain safe-area spacing
+- Camera and chat should feel like native mobile screens
+
+INTERACTIONS
+
+Implement:
+- Functional navigation
+- Mobile menu
+- Camera permission request
+- Image upload and preview
+- Simulated scan validation
+- Simulated processing progress
+- Report tabs and accordions
+- Routine checkboxes
+- Product filtering
+- Chat messages and suggested prompts
+- Local scan history
+- Report comparison
+- Modal dialogs
+- Toast notifications
+- Loading and empty states
+- Error states
+- Confirmation before deleting scans
+
+MOCK DATA
+
+Use realistic mock data for a fictional user named Vivisha.
+
+Example:
+- Overall score: 82
+- Previous score: 79
+- Skin type: Combination
+- Hydration: 86
+- Texture: 88
+- Tone evenness: 81
+- Clarity: 74
+- Fine lines: 90
+- Dark circles: 70
+
+Concerns:
+- Mild visible acne
+- Slight dryness around cheeks
+- Mild dark circles
+- Some uneven pigmentation
+
+Strengths:
+- Good visible hydration
+- Fine texture
+- Mostly even tone
+- Low redness
+
+DISCLAIMER
+
+Display this clearly but unobtrusively:
+
+“Sunderta AI provides cosmetic skincare information based on visible image characteristics and user-provided information. It does not diagnose, treat, or prevent medical conditions. Results may vary depending on lighting, camera quality, makeup, and other factors. Consult a qualified dermatologist for medical advice.”
+
+CODE QUALITY
+
+Generate:
+- Clear component structure
+- Reusable cards, buttons, score rings, progress items, product cards, chat components, modals, and form controls
+- Separate mock-data files
+- Semantic HTML
+- Accessible labels
+- Keyboard navigation
+- Responsive CSS
+- No obvious console errors
+- No broken routes
+- No empty pages
+- No lorem ipsum
+- No repeated generic template sections
+
+The website should appear ready for a premium beauty-tech product demo and investor presentation while still being realistic enough to extend into a production application.

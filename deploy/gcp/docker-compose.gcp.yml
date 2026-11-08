@@ -1,0 +1,35 @@
+# Single-VM GCP overlay with Caddy HTTPS (sslip.io + Let's Encrypt).
+# Usage on VM:
+#   docker compose -f docker-compose.yml -f deploy/gcp/docker-compose.gcp.yml up -d --build
+
+services:
+  frontend:
+    build:
+      args:
+        VITE_API_BASE_URL: ""
+    # Keep container port available to Caddy on the docker network.
+    # Public HTTP/HTTPS is terminated by Caddy below.
+
+  api:
+    environment:
+      CORS_ORIGINS: "http://localhost:3000,http://127.0.0.1:3000,http://8.234.68.196,https://8.234.68.196.sslip.io,http://8.234.68.196.sslip.io,https://prefers-atlanta-interval-mixed.trycloudflare.com"
+      ADMIN_PASSWORD: "okokchangeme123"
+      SESSION_SECRET: "sunderta-gcp-session-secret-change-in-prod"
+      SESSION_TTL_DAYS: "30"
+
+  caddy:
+    image: caddy:2.9-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/gcp/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - frontend
+
+volumes:
+  caddy_data:
+  caddy_config:

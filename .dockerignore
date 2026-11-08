@@ -1,0 +1,12 @@
+node_modules
+dist
+.venv
+__pycache__
+*.pyc
+.env
+data/uploads
+.DS_Store
+ui-code/node_modules
+ui-code/dist
+backend/.pytest_cache
+*.egg-info

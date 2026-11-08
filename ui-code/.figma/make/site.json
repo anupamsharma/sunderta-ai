@@ -1,0 +1,10 @@
+{
+  "description": "Provides a responsive beauty analysis experience with guided face capture, progress tracking, and AI-driven personalized skincare insights in an elegant interface.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
